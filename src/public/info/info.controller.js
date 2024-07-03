@@ -7,8 +7,8 @@
   infoController.$inject = ['MenuService'];
 
   function infoController(MenuService) {
-    var myInfoCtrl = this;
-    myInfoCtrl.user = MenuService.getUser();
+    var infoCtrl = this;
+    infoCtrl.user = MenuService.getUser();
   }
 
 })();

@@ -30,20 +30,22 @@
                 <div ng-message="email">Invalid email address</div>
             </div>
         </div>
-        <!-- Phone Number -->
+        <!-- Phone Number (Optional) -->
         <div class="form-group" ng-class="{ 'has-error': signupForm.phone.$touched && signupForm.phone.$invalid }">
             <label>Phone Number</label>
-            <input type="tel" name="phone" ng-model="signupCtrl.user.phone" required ng-pattern="/^\d{10}$/">
+            <input type="tel" name="phone" ng-model="signupCtrl.user.phone" "
+                style="color: black;">
             <div ng-messages="signupForm.phone.$error" ng-if="signupForm.phone.$touched">
-                <div ng-message="required">Phone number is required</div>
-                <div ng-message="pattern">Invalid phone number (must be 10 digits)</div>
+                <div ng-message="pattern">Invalid phone number</div>
             </div>
         </div>
-        <!-- Favorite Menu Number -->
+
+        <!-- Favorite Menu Number (Optional) -->
         <div class="form-group"
             ng-class="{ 'has-error': signupForm.favoriteMenuNumber.$touched && signupForm.favoriteMenuNumber.$invalid }">
             <label>Favorite Menu Number</label>
-            <input type="text" name="favoriteMenuNumber" ng-model="signupCtrl.user.favoriteMenuNumber" required>
+            <input type="text" name="favoriteMenuNumber" ng-model="signupCtrl.user.favoriteMenuNumber"
+                style="color: black;">
             <div ng-messages="signupForm.favoriteMenuNumber.$error" ng-if="signupForm.favoriteMenuNumber.$touched">
                 <div ng-message="required">Favorite Menu Number is required</div>
             </div>

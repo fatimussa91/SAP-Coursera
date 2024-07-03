@@ -12,8 +12,9 @@
         <p>{{ infoCtrl.user.favoriteItem.name }}</p>
         <p>{{ infoCtrl.user.favoriteItem.description }}</p>
     </div>
-    <div ng-if="!infoCtrl.user">
-        <p>Not Signed Up Yet. <a href="#!signup">Sign up Now!</a></p>
+    <div >
+        <p>Not Signed Up Yet. </p>
+            <button><a  ui-sref="public.signup">Sign up Now!</a></button>
     </div>
 
 </div>
