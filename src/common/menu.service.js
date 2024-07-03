@@ -23,6 +23,11 @@
       });
     };
 
+    service.getAllMenuItems = function () {
+      return $http.get(ApiPath + '/menu_items.json').then(function (response) {
+        return response.data;
+      });
+    };
     service.getMenuItem = function (category, itemNumber) {
       return $http.get(ApiPath + '/menu_items/' + category + '/menu_items/' + itemNumber +'.json' ).then(function (response) {
         return response.data;

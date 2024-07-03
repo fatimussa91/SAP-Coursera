@@ -8,7 +8,8 @@
             ng-class="{ 'has-error': signupForm.firstName.$touched && signupForm.firstName.$invalid }">
             <label>First Name</label>
             <input type="text" name="firstName" ng-model="signupCtrl.user.firstName" required>
-            <div ng-messages="signupForm.firstName.$error" ng-if="signupForm.firstName.$touched && signupForm.firstName.$invalid ">
+            <div ng-messages="signupForm.firstName.$error"
+                ng-if="signupForm.firstName.$touched && signupForm.firstName.$invalid ">
                 <div ng-message="required">First Name is required</div>
             </div>
         </div>
@@ -17,7 +18,8 @@
             ng-class="{ 'has-error': signupForm.lastName.$touched && signupForm.lastName.$invalid }">
             <label>Last Name</label>
             <input type="text" name="lastName" ng-model="signupCtrl.user.lastName" required>
-            <div ng-messages="signupForm.lastName.$error" ng-if="signupForm.lastName.$touched && signupForm.lastName.$invalid">
+            <div ng-messages="signupForm.lastName.$error"
+                ng-if="signupForm.lastName.$touched && signupForm.lastName.$invalid">
                 <div ng-message="required">Last Name is required</div>
             </div>
         </div>
@@ -31,18 +33,24 @@
             </div>
         </div>
         <!-- Phone Number (Optional) -->
-        <div class="form-group" >
+        <div class="form-group">
             <label>Phone Number (Optional)</label>
             <input type="tel" name="phone" ng-model="signupCtrl.user.phone" "
-                style="color: black;">
+                style=" color: black;">
         </div>
 
         <!-- Favorite Menu Number (Optional) -->
         <div class="form-group">
-            <label>Favorite Menu Number (Optional)</label>
-            <input type="text" name="favoriteMenuNumber" ng-model="signupCtrl.user.favoriteMenuNumber"
-                style="color: black;">
-        
+            <label>Favorite Menu Number</label>
+            <select name="favoriteMenuNumber" ng-model="signupCtrl.user.favoriteMenuNumber" style="color: black; background-color: white;" >
+                <option value="" disabled selected>Select your favorite menu item</option>
+                <option ng-repeat="item in signupCtrl.menuItems">
+                   {{item.name}}
+                  </option>
+            </select>
+            <div ng-messages="signupForm.favoriteMenuNumber.$error" ng-if="signupForm.favoriteMenuNumber.$touched &&  signupForm.favoriteMenuNumber.$invalid ">
+                <div ng-message="required">Favorite Menu Number is required</div>
+            </div>
         </div>
         <!-- Submit Button -->
         <div class="form-group">

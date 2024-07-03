@@ -216,3 +216,8 @@ input[type="email"],
 input[type="tel"] {
   color: black;
 }
+/* styles.css */
+select {
+  color: black;
+  background-color: white;
+}
