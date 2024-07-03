@@ -1,0 +1,19 @@
+<div class="container">
+    <!-- myinfo.template.html -->
+
+    <h1>My Info</h1>
+    <div ng-if="infoCtrl.user">
+        <p>First Name: {{ infoCtrl.user.firstName }}</p>
+        <p>Last Name: {{ infoCtrl.user.lastName }}</p>
+        <p>Email: {{ infoCtrl.user.email }}</p>
+        <p>Phone: {{ infoCtrl.user.phone }}</p>
+        <h3>Favorite Menu Item</h3>
+        <img ng-src="{{ infoCtrl.user.favoriteItem.image }}" alt="{{ infoCtrl.user.favoriteItem.name }}">
+        <p>{{ infoCtrl.user.favoriteItem.name }}</p>
+        <p>{{ infoCtrl.user.favoriteItem.description }}</p>
+    </div>
+    <div ng-if="!infoCtrl.user">
+        <p>Not Signed Up Yet. <a href="#!signup">Sign up Now!</a></p>
+    </div>
+
+</div>

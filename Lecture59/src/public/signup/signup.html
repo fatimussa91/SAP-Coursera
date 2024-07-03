@@ -1,0 +1,59 @@
+<!-- signup.template.html -->
+<div>
+    <h1>Sign Up for Our Newsletter</h1>
+
+    <form name="signupForm" ng-submit="signupCtrl.submitForm(signupForm.$valid)" novalidate>
+        <!-- First Name -->
+        <div class="form-group"
+            ng-class="{ 'has-error': signupForm.firstName.$touched && signupForm.firstName.$invalid }">
+            <label>First Name</label>
+            <input type="text" name="firstName" ng-model="signupCtrl.user.firstName" required>
+            <div ng-messages="signupForm.firstName.$error" ng-if="signupForm.firstName.$touched">
+                <div ng-message="required">First Name is required</div>
+            </div>
+        </div>
+        <!-- Last Name -->
+        <div class="form-group"
+            ng-class="{ 'has-error': signupForm.lastName.$touched && signupForm.lastName.$invalid }">
+            <label>Last Name</label>
+            <input type="text" name="lastName" ng-model="signupCtrl.user.lastName" required>
+            <div ng-messages="signupForm.lastName.$error" ng-if="signupForm.lastName.$touched">
+                <div ng-message="required">Last Name is required</div>
+            </div>
+        </div>
+        <!-- Email Address -->
+        <div class="form-group" ng-class="{ 'has-error': signupForm.email.$touched && signupForm.email.$invalid }">
+            <label>Email Address</label>
+            <input type="email" name="email" ng-model="signupCtrl.user.email" required>
+            <div ng-messages="signupForm.email.$error" ng-if="signupForm.email.$touched">
+                <div ng-message="required">Email is required</div>
+                <div ng-message="email">Invalid email address</div>
+            </div>
+        </div>
+        <!-- Phone Number -->
+        <div class="form-group" ng-class="{ 'has-error': signupForm.phone.$touched && signupForm.phone.$invalid }">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" ng-model="signupCtrl.user.phone" required ng-pattern="/^\d{10}$/">
+            <div ng-messages="signupForm.phone.$error" ng-if="signupForm.phone.$touched">
+                <div ng-message="required">Phone number is required</div>
+                <div ng-message="pattern">Invalid phone number (must be 10 digits)</div>
+            </div>
+        </div>
+        <!-- Favorite Menu Number -->
+        <div class="form-group"
+            ng-class="{ 'has-error': signupForm.favoriteMenuNumber.$touched && signupForm.favoriteMenuNumber.$invalid }">
+            <label>Favorite Menu Number</label>
+            <input type="text" name="favoriteMenuNumber" ng-model="signupCtrl.user.favoriteMenuNumber" required>
+            <div ng-messages="signupForm.favoriteMenuNumber.$error" ng-if="signupForm.favoriteMenuNumber.$touched">
+                <div ng-message="required">Favorite Menu Number is required</div>
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <!-- Message Display -->
+        <div ng-if="signupCtrl.message">{{ signupCtrl.message }}</div>
+    </form>
+
+</div>
