@@ -56,7 +56,12 @@ function routeConfig ($stateProvider) {
       url: '/info',
       templateUrl: 'src/public/info/info.html',
       controller: 'infoController',
-      controllerAs: 'infoCtrl'
+      controllerAs: 'infoCtrl',
+      resolve: {
+        menuCategories: ['MenuService', function (MenuService) {
+          return MenuService.getCategories();
+        }]
+      }
     })
     ;
 }
